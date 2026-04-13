@@ -3,4 +3,4 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . .
-CMD npx serve . -l tcp://0.0.0.0:$PORT
+CMD ["/bin/sh", "-c", "npx serve . -l tcp://0.0.0.0:$PORT"]
