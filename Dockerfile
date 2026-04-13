@@ -1,6 +1,4 @@
 FROM node:22-alpine
 WORKDIR /app
-COPY package.json .
-RUN npm install
 COPY . .
-CMD ["/bin/sh", "-c", "npx serve . -l tcp://0.0.0.0:$PORT"]
+CMD ["node", "server.js"]
