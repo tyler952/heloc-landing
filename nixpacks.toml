@@ -1,5 +1,8 @@
+[phases.setup]
+nixPkgs = ["nodejs_22", "npm"]
+
 [phases.build]
-cmds = []
+cmds = ["npm install serve"]
 
 [start]
-cmd = "npx serve . -p $PORT"
+cmd = "npx serve . -l tcp://0.0.0.0:$PORT"
