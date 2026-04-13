@@ -213,9 +213,21 @@
               </select>
             </div>
             <div class="space-y-2">
-              <label class="block text-[0.6875rem] uppercase tracking-[0.1em] text-on-surface-variant font-bold">Estimated Equity</label>
+              <label class="block text-[0.6875rem] uppercase tracking-[0.1em] text-on-surface-variant font-bold">Credit Score</label>
+              <select id="credit_score" class="w-full bg-transparent border-0 border-b border-outline focus:border-primary focus:ring-0 transition-colors py-3 px-0">
+                <option value="">Select range</option>
+                <option value="740+">740+</option>
+                <option value="700-739">700 – 739</option>
+                <option value="660-699">660 – 699</option>
+                <option value="620-659">620 – 659</option>
+                <option value="below 620">Below 620</option>
+              </select>
+            </div>
+            <div class="space-y-2 md:col-span-2">
+              <label class="block text-[0.6875rem] uppercase tracking-[0.1em] text-on-surface-variant font-bold">HELOC Amount Requested</label>
               <select id="loan_amount" class="w-full bg-transparent border-0 border-b border-outline focus:border-primary focus:ring-0 transition-colors py-3 px-0">
                 <option value="">Select range</option>
+                <option value="25000">Under $25K</option>
                 <option value="50000">$25K – $75K</option>
                 <option value="100000">$75K – $150K</option>
                 <option value="250000">$150K – $350K</option>
@@ -311,6 +323,7 @@
       email:        document.getElementById('email').value.trim(),
       loan_purpose: 'heloc',
       state:        document.getElementById('state').value || '',
+      credit_score: document.getElementById('credit_score').value || '',
       loan_amount:  parseInt(document.getElementById('loan_amount').value) || 0,
       lead_source:  'landing_page_heloc',
       ad_campaign:  'heloc_direct',
